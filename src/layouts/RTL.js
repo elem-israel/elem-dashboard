@@ -16,7 +16,7 @@ import routes from "routes.js";
 import styles from "assets/jss/material-dashboard-react/layouts/rtlStyle.js";
 
 import bgImage from "assets/img/sidebar-2.jpg";
-import logo from "assets/img/reactlogo.png";
+import logo from "assets/img/elem_logo.png";
 
 let ps;
 
@@ -48,7 +48,7 @@ export default function RTL({ ...rest }) {
   // states and functions
   const [image, setImage] = React.useState(bgImage);
   const [color, setColor] = React.useState("blue");
-  const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
+  const [fixedClasses, setFixedClasses] = React.useState("dropdown");
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleImageClick = image => {
     setImage(image);

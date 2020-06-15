@@ -91,34 +91,17 @@ export default function RTLPage() {
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="success">
-                <Store />
-              </CardIcon>
-              <p className={classes.cardCategory}>سود</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <DateRange />
-                ۲۴ ساعت اخیر
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>مشکلات حل شده</p>
+              <p className={classes.cardCategory}>מקרים חדשים</p>
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                توسط گیت‌هاب
+                פרטים נוספים
               </div>
             </CardFooter>
           </Card>
@@ -129,13 +112,13 @@ export default function RTLPage() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>دنبال‌کننده</p>
+              <p className={classes.cardCategory}>פרופילים נסרקו</p>
               <h3 className={classes.cardTitle}>+245</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <Update />
-                هم‌اکنون
+                עודכן לאחרונה: לפני 2 שעות
               </div>
             </CardFooter>
           </Card>
@@ -204,12 +187,11 @@ export default function RTLPage() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>وظایف انجام شده</h4>
-              <p className={classes.cardCategory}>کارایی آخرین کمپین</p>
+              <h4 className={classes.cardTitle}> סריקת פקופילים - אינסטגראם</h4>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> کمپین دو روز پیش ارسال شد
+                <AccessTime /> עודכן לאחרונה: לפני 5 דקות
               </div>
             </CardFooter>
           </Card>
