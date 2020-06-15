@@ -72,7 +72,7 @@ export default function RTLPage() {
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>فضا مصرف شده</p>
+              <p className={classes.cardCategory}>שטח אחסון</p>
               <h3 className={classes.cardTitle}>
                 49/50 <small>GB</small>
               </h3>
@@ -83,7 +83,7 @@ export default function RTLPage() {
                   <Warning />
                 </Danger>
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                  فضای بیشتری داشته باشید...
+                  שטח אחסון נגמר
                 </a>
               </div>
             </CardFooter>
