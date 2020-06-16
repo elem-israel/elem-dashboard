@@ -36,7 +36,7 @@ import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 import {
   dailySalesChart,
   emailsSubscriptionChart,
-  completedTasksChart
+  completedTasksChart,
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
@@ -47,16 +47,16 @@ let bugs = [
   "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
   "	نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
   "همان حال کار آنها به نوعی وابسته به متن می‌باشد",
-  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند"
+  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند",
 ];
 let website = [
   "بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته",
-  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟"
+  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟",
 ];
 let server = [
   "گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی؟",
   "از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی ؟",
-  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟"
+  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
 ];
 
 const useStyles = makeStyles(styles);
@@ -82,7 +82,7 @@ export default function RTLPage() {
                 <Danger>
                   <Warning />
                 </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
+                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                   שטח אחסון נגמר
                 </a>
               </div>
@@ -95,8 +95,8 @@ export default function RTLPage() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>מקרים חדשים</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
+              <h3 className={classes.cardTitle}>47</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -113,7 +113,7 @@ export default function RTLPage() {
                 <Accessibility />
               </CardIcon>
               <p className={classes.cardCategory}>פרופילים נסרקו</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <h3 className={classes.cardTitle}>245</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -125,7 +125,82 @@ export default function RTLPage() {
         </GridItem>
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={6}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>פרופילים חדשים שאותרו</h4>
+              <p className={classes.cardCategoryWhite}>
+                ע"י מערכת ML ב24 שעות האחרונות
+              </p>
+            </CardHeader>
+            <CardBody>
+              <SnackbarContent
+                message={
+                  "etdagan; 72 followers; following 43; bio: loving life; 72% risk"
+                }
+                close
+                rtlActive
+                color="danger"
+              />
+              <SnackbarContent
+                message={
+                  "kirfd; 15 followers; following 127; bio: best life is with friends; 34% risk"
+                }
+                close
+                rtlActive
+                color="success"
+              />
+            </CardBody>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={6}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>פרופילים לפי קגוריות</h4>
+              <p className={classes.cardCategoryWhite}>
+                מצאת טעות? <a href={"#"}>דווח למנהל המערכת</a>.
+              </p>
+            </CardHeader>
+            <CardBody>
+              <SnackbarContent
+                message={
+                  <>
+                    אותרו 47 פרופילים עם סיכון <b>גבוה</b>{" "}
+                    <Button color={"primary"}>Go to profiles</Button>
+                  </>
+                }
+                close
+                rtlActive
+                color="danger"
+              />
+              <SnackbarContent
+                message={
+                  <>
+                    אותרו 13 פרופילים עם סיכון <b>בינוני</b>{" "}
+                    <Button color={"primary"}>Go to profiles</Button>
+                  </>
+                }
+                close
+                rtlActive
+                color="warning"
+              />
+              <SnackbarContent
+                message={
+                  <>
+                    אותרו 13 פרופילים עם סיכון <b>נמוך</b>{" "}
+                    <Button color={"primary"}>Go to profiles</Button>
+                  </>
+                }
+                close
+                rtlActive
+                color="success"
+              />
+            </CardBody>
+          </Card>
+        </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={6}>
           <Card chart>
             <CardHeader color="success">
               <ChartistGraph
@@ -152,30 +227,7 @@ export default function RTLPage() {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="warning">
-              <ChartistGraph
-                className="ct-chart"
-                data={emailsSubscriptionChart.data}
-                type="Bar"
-                options={emailsSubscriptionChart.options}
-                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                listener={emailsSubscriptionChart.animation}
-              />
-            </CardHeader>
-            <CardBody>
-              <h4 className={classes.cardTitle}>دنبال کننده‌های ایمیلی</h4>
-              <p className={classes.cardCategory}>کارایی آخرین کمپین</p>
-            </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> کمپین دو روز پیش ارسال شد
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={6}>
           <Card chart>
             <CardHeader color="danger">
               <ChartistGraph
@@ -214,7 +266,7 @@ export default function RTLPage() {
                     tasks={bugs}
                     rtlActive
                   />
-                )
+                ),
               },
               {
                 tabName: "وبسایت",
@@ -226,7 +278,7 @@ export default function RTLPage() {
                     tasks={website}
                     rtlActive
                   />
-                )
+                ),
               },
               {
                 tabName: "سرور",
@@ -238,8 +290,8 @@ export default function RTLPage() {
                     tasks={server}
                     rtlActive
                   />
-                )
-              }
+                ),
+              },
             ]}
           />
         </GridItem>
@@ -259,86 +311,9 @@ export default function RTLPage() {
                   ["1", "احمد حسینی	", "$36,738", "مازندران"],
                   ["2", "مینا رضایی	", "$23,789", "گلستان"],
                   ["3", "مبینا احمدپور	", "$56,142", "تهران"],
-                  ["4", "جلال آقایی	", "$38,735", "شهرکرد"]
+                  ["4", "جلال آقایی	", "$38,735", "شهرکرد"],
                 ]}
               />
-            </CardBody>
-          </Card>
-        </GridItem>
-      </GridContainer>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>اعلان ها</h4>
-              <p className={classes.cardCategoryWhite}>
-                يدويا من قبل أصدقائنا من{" "}
-                <a
-                  target="_blank"
-                  href="https://material-ui-next.com/?ref=creativetime"
-                >
-                  واجهة المستخدم المادية
-                </a>{" "}
-                ونصب من قبل{" "}
-                <a
-                  target="_blank"
-                  href="https://www.creative-tim.com/?ref=mdr-rtl-page"
-                >
-                  الإبداعية تيم
-                </a>
-                . يرجى التحقق من{" "}
-                <a href="#pablo" target="_blank">
-                  وثائق كاملة
-                </a>
-                .
-              </p>
-            </CardHeader>
-            <CardBody>
-              <SnackbarContent
-                message={
-                  'این یک اعلان است که با کلاس color="warning" ایجاد شده است.'
-                }
-                close
-                rtlActive
-                color="warning"
-              />
-              <SnackbarContent
-                message={
-                  'این یک اعلان است که با کلاس color="primary" ایجاد شده است.'
-                }
-                close
-                rtlActive
-                color="primary"
-              />
-              <SnackbarContent
-                message={"این یک اعلان با دکمه بستن و آیکن است"}
-                close
-                rtlActive
-                color="info"
-              />
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card profile>
-            <CardAvatar profile>
-              <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={avatar} alt="..." />
-              </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>مدیرعامل / مدیرفنی</h6>
-              <h4 className={classes.cardTitle}>خداداد عزیزی</h4>
-              <p className={classes.description}>
-                طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-                صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-                می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و
-                ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از
-                متن‌های آزمایشی و بی‌معنی استفاده می‌کنند ...
-              </p>
-              <Button color="primary" round>
-                دنبال‌کردن
-              </Button>
             </CardBody>
           </Card>
         </GridItem>
