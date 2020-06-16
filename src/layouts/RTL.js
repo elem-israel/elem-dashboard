@@ -50,10 +50,12 @@ export default function RTL({ ...rest }) {
   const [color, setColor] = React.useState("blue");
   const [fixedClasses, setFixedClasses] = React.useState("dropdown");
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const handleImageClick = image => {
+  const [alarm, setAlarm] = React.useState(false);
+
+  const handleImageClick = (image) => {
     setImage(image);
   };
-  const handleColorClick = color => {
+  const handleColorClick = (color) => {
     setColor(color);
   };
   const handleFixedClick = () => {
@@ -79,7 +81,7 @@ export default function RTL({ ...rest }) {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
         suppressScrollX: true,
-        suppressScrollY: false
+        suppressScrollY: false,
       });
       document.body.style.overflow = "hidden";
     }
@@ -92,6 +94,15 @@ export default function RTL({ ...rest }) {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
+
+  React.useEffect(() => {
+    window.addEventListener("keydown", (event) => {
+      console.log(event.key);
+      event.key === "a" && setAlarm(true);
+      event.key === "b" && setAlarm(false);
+    });
+  }, []);
+
   return (
     <div className={classes.wrapper}>
       <Sidebar
@@ -110,6 +121,7 @@ export default function RTL({ ...rest }) {
           routes={routes}
           handleDrawerToggle={handleDrawerToggle}
           rtlActive
+          notifications={alarm ? 1 : 0}
           {...rest}
         />
         {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}

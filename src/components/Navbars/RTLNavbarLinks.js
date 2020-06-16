@@ -22,10 +22,10 @@ import styles from "assets/jss/material-dashboard-react/components/rtlHeaderLink
 
 const useStyles = makeStyles(styles);
 
-export default function RTLNavbarLinks() {
+export default function RTLNavbarLinks({ n = 0 }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(null);
-  const handleToggle = event => {
+  const handleToggle = (event) => {
     if (open && open.contains(event.target)) {
       setOpen(null);
     } else {
@@ -42,13 +42,13 @@ export default function RTLNavbarLinks() {
       <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
-            className: classes.margin + " " + classes.search
+            className: classes.margin + " " + classes.search,
           }}
           inputProps={{
             placeholder: "חיפוש...",
             inputProps: {
-              "aria-label": "Search"
-            }
+              "aria-label": "Search",
+            },
           }}
         />
         <Button color="white" aria-label="edit" justIcon round>
@@ -78,12 +78,13 @@ export default function RTLNavbarLinks() {
           className={classes.buttonLink}
         >
           <Notifications className={classes.icons} />
-          <span className={classes.notifications}>۵</span>
           <Hidden mdUp implementation="css">
             <p onClick={handleToggle} className={classes.linkText}>
-              اعلان‌ها
+              {" "}
+              התראות{" "}
             </p>
           </Hidden>
+          {n > 0 && <span className={classes.notifications}>{n}</span>}
         </Button>
         <Poppers
           open={Boolean(open)}
@@ -102,7 +103,7 @@ export default function RTLNavbarLinks() {
               id="menu-list-grow"
               style={{
                 transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom"
+                  placement === "bottom" ? "center top" : "center bottom",
               }}
             >
               <Paper>
@@ -112,31 +113,7 @@ export default function RTLNavbarLinks() {
                       onClick={handleClose}
                       className={classes.dropdownItem}
                     >
-                      محمدرضا به ایمیل شما پاسخ داد
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      شما ۵ وظیفه جدید دارید
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      از حالا شما با علیرضا دوست هستید
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      اعلان دیگر
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      اعلان دیگر
+                     אותר פרופיל חדש בשם teen2day
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
