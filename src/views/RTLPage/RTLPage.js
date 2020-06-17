@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -61,10 +61,33 @@ let server = [
 
 const useStyles = makeStyles(styles);
 
+const BlinkingComponent = ({ highlighting }) => (
+  <div
+    style={{
+      transition: "all 0.5s ease-in",
+      color: highlighting ? "white" : "black",
+    }}
+  >
+    Watch Me
+  </div>
+);
+
 export default function RTLPage() {
   const classes = useStyles();
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHighlight(true);
+      setTimeout(() => {
+        setHighlight(false);
+      }, 2000);
+    }, 2000);
+  }, []);
+
   return (
     <div>
+      {/*<BlinkingComponent highlighting={highlight} />*/}
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>

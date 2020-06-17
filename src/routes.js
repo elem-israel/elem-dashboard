@@ -23,6 +23,10 @@ import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Language from "@material-ui/icons/Language";
+import TocIcon from '@material-ui/icons/Toc';
+import AddIcCallIcon from '@material-ui/icons/AddIcCall';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
@@ -36,68 +40,68 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
+    path: "/rtl-page",
     name: "Dashboard",
-    rtlName: "לוח מכוונים",
+    rtlName: "לוח קרה",
     icon: Dashboard,
-    component: DashboardPage,
-    layout: "/admin"
+    component: RTLPage,
+    layout: "/rtl",
   },
   {
     path: "/user",
     name: "User Profile",
-    rtlName: "הגדרות משתמש",
+    rtlName: "ניהול מתנדבים",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/table",
     name: "Table List",
-    rtlName: "טבלאות",
+    rtlName: "פרופילים חדשים בטיפול",
     icon: "content_paste",
     component: TableList,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/typography",
     name: "Typography",
-    rtlName: "רשימות",
+    rtlName: "בתהליך יצירת קשר",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/icons",
     name: "Icons",
-    rtlName: "המלצות",
-    icon: BubbleChart,
+    rtlName: "יועצים זמינים לשיחה",
+    icon: AddIcCallIcon,
     component: Icons,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/maps",
     name: "Maps",
-    rtlName: "מפות",
-    icon: LocationOn,
+    rtlName: "מלווים זמינים",
+    icon: ContactMailIcon,
     component: Maps,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
     path: "/notifications",
     name: "Notifications",
-    rtlName: "התראות",
-    icon: Notifications,
+    rtlName: "ניתוח תוכן",
+    icon: TocIcon,
     component: NotificationsPage,
-    layout: "/admin"
+    layout: "/admin",
   },
   {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "שינוי שפה",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
+    path: "/notifications",
+    name: "Notifications",
+    rtlName: "דוחות",
+    icon: AssessmentIcon,
+    component: NotificationsPage,
+    layout: "/admin",
   }
 ];
 
