@@ -209,17 +209,17 @@ export default function RTLPage() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>فروش روزانه</h4>
+              <h4 className={classes.cardTitle}>עוד גרף</h4>
               <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory} /> 55%
                 </span>{" "}
-                رشد در فروش امروز.
+                עלייה דרמטית
               </p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> ۴ دقیقه پیش
+                <AccessTime /> שמציג נתונים מעניינים
               </div>
             </CardFooter>
           </Card>
@@ -243,75 +243,6 @@ export default function RTLPage() {
                 <AccessTime /> עודכן לאחרונה: לפני 5 דקות
               </div>
             </CardFooter>
-          </Card>
-        </GridItem>
-      </GridContainer>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
-          <CustomTabs
-            title="وظایف:"
-            headerColor="primary"
-            rtlActive
-            tabs={[
-              {
-                tabName: "باگ‌ها",
-                tabIcon: BugReport,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0, 3]}
-                    tasksIndexes={[0, 1, 2, 3]}
-                    tasks={bugs}
-                    rtlActive
-                  />
-                ),
-              },
-              {
-                tabName: "وبسایت",
-                tabIcon: Code,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={website}
-                    rtlActive
-                  />
-                ),
-              },
-              {
-                tabName: "سرور",
-                tabIcon: Cloud,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[1]}
-                    tasksIndexes={[0, 1, 2]}
-                    tasks={server}
-                    rtlActive
-                  />
-                ),
-              },
-            ]}
-          />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="warning">
-              <h4 className={classes.cardTitleWhite}>آمار کارکنان</h4>
-              <p className={classes.cardCategoryWhite}>
-                کارکنان جدید از ۱۵ آبان ۱۳۹۶
-              </p>
-            </CardHeader>
-            <CardBody>
-              <Table
-                tableHeaderColor="warning"
-                tableHead={["کد", "نام", "حقوق", "استان"]}
-                tableData={[
-                  ["1", "احمد حسینی	", "$36,738", "مازندران"],
-                  ["2", "مینا رضایی	", "$23,789", "گلستان"],
-                  ["3", "مبینا احمدپور	", "$56,142", "تهران"],
-                  ["4", "جلال آقایی	", "$38,735", "شهرکرد"],
-                ]}
-              />
-            </CardBody>
           </Card>
         </GridItem>
       </GridContainer>
