@@ -19,16 +19,12 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
-import Language from "@material-ui/icons/Language";
 import TocIcon from '@material-ui/icons/Toc';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 // core components/views for Admin layout
-import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
