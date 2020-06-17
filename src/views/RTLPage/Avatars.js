@@ -88,7 +88,7 @@ export default function Avatars({ classes }) {
                 <span className={dialogClasses.boldText}> האבא </span>
                 של <span className={dialogClasses.boldText}> האחים </span>
                 שלי <span className={dialogClasses.boldText}> הטריד </span>אותי
-                <span className={dialogClasses.boldText}> מינית </span>שכולם
+                <span className={dialogClasses.boldText}> מינית</span>, שכולם
                 ישנו הוא היה נוגע בי ומעביר את
                 <span className={dialogClasses.boldText}> איבר המין </span> שלו
                 על גופי, זה נמשך שנה. סיפרתי לאמא שלי בחצי שנה והיא לא האמינה עד
