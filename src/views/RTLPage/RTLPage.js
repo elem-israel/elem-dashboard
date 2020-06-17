@@ -90,23 +90,6 @@ function Incrementing({ classes }) {
     <>
       <GridItem xs={12} sm={6} md={4}>
         <Card>
-          <CardHeader color="danger" stats icon>
-            <CardIcon color="danger">
-              <Icon>info_outline</Icon>
-            </CardIcon>
-            <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
-            <h3 className={classes.cardTitle}>{inDanger}</h3>
-          </CardHeader>
-          <CardFooter stats>
-            <div className={classes.stats}>
-              <LocalOffer />
-              פרטים נוספים
-            </div>
-          </CardFooter>
-        </Card>
-      </GridItem>
-      <GridItem xs={12} sm={6} md={4}>
-        <Card>
           <CardHeader color="info" stats icon>
             <CardIcon color="info">
               <Accessibility />
@@ -119,7 +102,24 @@ function Incrementing({ classes }) {
           <CardFooter stats>
             <div className={classes.stats}>
               <Update />
-              עודכן לאחרונה: לפני 2 שעות
+              מתעדכן בזמן אמת
+            </div>
+          </CardFooter>
+        </Card>
+      </GridItem>
+      <GridItem xs={12} sm={6} md={4}>
+        <Card>
+          <CardHeader color="danger" stats icon>
+            <CardIcon color="danger">
+              <Icon>info_outline</Icon>
+            </CardIcon>
+            <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
+            <h3 className={classes.cardTitle}>{inDanger}</h3>
+          </CardHeader>
+          <CardFooter stats>
+            <div className={classes.stats}>
+              <LocalOffer />
+              פרטים נוספים
             </div>
           </CardFooter>
         </Card>
