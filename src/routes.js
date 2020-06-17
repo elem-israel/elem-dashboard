@@ -38,7 +38,7 @@ const dashboardRoutes = [
   {
     path: "/rtl-page",
     name: "Dashboard",
-    rtlName: "לוח קרה",
+    rtlName: "לוח בקרה",
     icon: Dashboard,
     component: RTLPage,
     layout: "/rtl",
