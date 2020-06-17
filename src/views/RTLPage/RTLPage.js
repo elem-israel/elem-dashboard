@@ -6,9 +6,6 @@ import ChartistGraph from "react-chartist";
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-import Store from "@material-ui/icons/Store";
-import Warning from "@material-ui/icons/Warning";
-import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
@@ -24,24 +21,20 @@ import GridContainer from "components/Grid/GridContainer.js";
 import Table from "components/Table/Table.js";
 import Tasks from "components/Tasks/Tasks.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
-import Danger from "components/Typography/Danger.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import SnackbarContent from "components/Snackbar/SnackbarContent.js";
+import Avatar from "@material-ui/core/Avatar";
 
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
-} from "variables/charts.js";
+import a3 from "../../assets/img/avatars/3.jpg";
+
+import { completedTasksChart, dailySalesChart } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
-
-import avatar from "assets/img/faces/marc.jpg";
+import Avatars from "./Avatars";
 
 let bugs = [
   "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
@@ -72,80 +65,78 @@ const BlinkingComponent = ({ highlighting }) => (
   </div>
 );
 
+function Incrementing({ classes }) {
+  const [scanned, setScanned] = useState(12155);
+  const [inDanger, setInDanger] = useState(425);
+
+  function tickScanned() {
+    const rand = Math.random() + 200;
+    setScanned((scanned) => scanned + 1);
+    setTimeout(tickScanned, rand);
+  }
+
+  function tickDanger() {
+    const rand = Math.random() * 3000;
+    setInDanger((i) => i + 1);
+    setTimeout(tickDanger, rand);
+  }
+
+  useEffect(() => {
+    tickScanned();
+    tickDanger();
+  }, []);
+
+  return (
+    <>
+      <GridItem xs={12} sm={6} md={4}>
+        <Card>
+          <CardHeader color="danger" stats icon>
+            <CardIcon color="danger">
+              <Icon>info_outline</Icon>
+            </CardIcon>
+            <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
+            <h3 className={classes.cardTitle}>{inDanger}</h3>
+          </CardHeader>
+          <CardFooter stats>
+            <div className={classes.stats}>
+              <LocalOffer />
+              פרטים נוספים
+            </div>
+          </CardFooter>
+        </Card>
+      </GridItem>
+      <GridItem xs={12} sm={6} md={4}>
+        <Card>
+          <CardHeader color="info" stats icon>
+            <CardIcon color="info">
+              <Accessibility />
+            </CardIcon>
+            <p className={classes.cardCategory}>פרופילים נסרקו</p>
+            <h3 className={classes.cardTitle}>
+              {new Intl.NumberFormat("en-IN").format(scanned)}
+            </h3>
+          </CardHeader>
+          <CardFooter stats>
+            <div className={classes.stats}>
+              <Update />
+              עודכן לאחרונה: לפני 2 שעות
+            </div>
+          </CardFooter>
+        </Card>
+      </GridItem>
+    </>
+  );
+}
+
 export default function RTLPage() {
   const classes = useStyles();
   const [highlight, setHighlight] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setHighlight(true);
-      setTimeout(() => {
-        setHighlight(false);
-      }, 2000);
-    }, 2000);
-  }, []);
 
   return (
     <div>
       {/*<BlinkingComponent highlighting={highlight} />*/}
       <GridContainer>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="warning" stats icon>
-              <CardIcon color="warning">
-                <Icon>content_copy</Icon>
-              </CardIcon>
-              <p className={classes.cardCategory}>שטח אחסון</p>
-              <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
-              </h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  שטח אחסון נגמר
-                </a>
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="danger" stats icon>
-              <CardIcon color="danger">
-                <Icon>info_outline</Icon>
-              </CardIcon>
-              <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
-              <h3 className={classes.cardTitle}>47</h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <LocalOffer />
-                פרטים נוספים
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="info" stats icon>
-              <CardIcon color="info">
-                <Accessibility />
-              </CardIcon>
-              <p className={classes.cardCategory}>פרופילים נסרקו</p>
-              <h3 className={classes.cardTitle}>245</h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <Update />
-                עודכן לאחרונה: לפני 2 שעות
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
+        <Incrementing classes={classes} />
       </GridContainer>
       <GridContainer>
         <GridItem xs={12} sm={12} md={6}>
@@ -156,30 +147,13 @@ export default function RTLPage() {
                 ע"י מערכת ML ב24 שעות האחרונות
               </p>
             </CardHeader>
-            <CardBody>
-              <SnackbarContent
-                message={
-                  "etdagan; 72 followers; following 43; bio: loving life; 72% risk"
-                }
-                close
-                rtlActive
-                color="danger"
-              />
-              <SnackbarContent
-                message={
-                  "kirfd; 15 followers; following 127; bio: best life is with friends; 34% risk"
-                }
-                close
-                rtlActive
-                color="success"
-              />
-            </CardBody>
+            <Avatars classes={classes} />
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={6}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>פרופילים לפי קגוריות</h4>
+              <h4 className={classes.cardTitleWhite}>פרופילים לפי סיכון</h4>
               <p className={classes.cardCategoryWhite}>
                 מצאת טעות? <a href={"#"}>דווח למנהל המערכת</a>.
               </p>
