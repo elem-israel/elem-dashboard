@@ -35,6 +35,7 @@ import { completedTasksChart, dailySalesChart } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Avatars from "./Avatars";
+import Highlight from "./Highlight";
 
 let bugs = [
   "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
@@ -130,11 +131,9 @@ function Incrementing({ classes }) {
 
 export default function RTLPage() {
   const classes = useStyles();
-  const [highlight, setHighlight] = useState(false);
 
   return (
     <div>
-      {/*<BlinkingComponent highlighting={highlight} />*/}
       <GridContainer>
         <Incrementing classes={classes} />
       </GridContainer>
@@ -195,6 +194,9 @@ export default function RTLPage() {
             </CardBody>
           </Card>
         </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <Highlight classes={classes} />
       </GridContainer>
       <GridContainer>
         <GridItem xs={12} sm={12} md={6}>
