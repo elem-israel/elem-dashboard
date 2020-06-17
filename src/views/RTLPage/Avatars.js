@@ -21,108 +21,116 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
 const styles = {
-    root: {
-        direction: "rtl",
-    },
-    boldText: {
-        color: "red",
-    },
+  root: {
+    direction: "rtl",
+  },
+  boldText: {
+    color: "red",
+  },
 };
 
 const useStyles = makeStyles(styles);
 
 export default function Avatars({ classes }) {
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-    const [status, setStatus] = useState("c");
+  const [status, setStatus] = useState("c");
 
-    const handleChange = (event) => {
-        setStatus(event.target.value);
-    };
+  const handleChange = (event) => {
+    setStatus(event.target.value);
+  };
 
-    const handleOpen = () => {
-        setIsDialogOpen(true);
-    };
+  const handleOpen = () => {
+    setIsDialogOpen(true);
+  };
 
-    const handleClose = () => {
-        setIsDialogOpen(false);
-    };
+  const handleClose = () => {
+    setIsDialogOpen(false);
+  };
 
-    const dialogClasses = useStyles();
-    return (
-        <CardBody>
-            <div style={{ display: "flex" }}>
-                <IconButton aria-label="delete">
-                    <ChevronRightIcon />
-                </IconButton>
-                {[a1, a2, a3, a4, a5, a6].map((img) => (
-                    // eslint-disable-next-line react/jsx-key
-                    <div onClick={handleOpen}>
-                        <Avatar
-                            alt="Remy Sharp"
-                            src={img}
-                            className={classes.largeAvatar}
-                        />
-                    </div>
-                ))}
+  const dialogClasses = useStyles();
+  return (
+    <CardBody>
+      <div style={{ display: "flex" }}>
+        <IconButton aria-label="delete">
+          <ChevronRightIcon />
+        </IconButton>
+        {[a1, a2, a3, a4, a5, a6].map((img) => (
+          // eslint-disable-next-line react/jsx-key
+          <div onClick={handleOpen}>
+            <Avatar
+              alt="Remy Sharp"
+              src={img}
+              className={classes.largeAvatar}
+            />
+          </div>
+        ))}
 
-                <Dialog
-                    open={isDialogOpen}
-                    onClose={handleClose}
-                    onExit={handleClose}
-                    style={{ direction: "rtl" }}
-                    BackdropProps={{
-                        classes: {
-                            root: dialogClasses.root,
-                        },
-                    }}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                >
-                    <DialogTitle id="alert-dialog-title">שם מלא: מאי סער</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                            <div style={{ lineHeight: 2.5 }}>אשת קשר בעמותת עלם: עדי כהן</div>
-                            <div>
-                                תכנים חשודים: בגיל 13 האבא של האחים שלי הטריד אותי מינית, בלילה
-                                שכולם ישנו הוא היה נוגע בי ומעביר את איבר המין שלו על גופי, זה
-                                נמשך שנה. סיפרתי לאמא שלי בחצי שנה והיא לא האמינה עד שאחותי אמרה
-                                לה שהוא הטריד גם אותה.
-                            </div>
-                            <div style={{ lineHeight: 2.5 }}>עוקב אחרי: broken_tears273 ,kolhahazuimalay</div>
-                            סטטוס פרופיל:
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={status}
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={"a"}>הפרופיל אותר</MenuItem>
-                                <MenuItem value={"b"}>נעשה ניסיון ליצירת קשר</MenuItem>
-                                <MenuItem value={"c"}>נוצר קשר ראשוני</MenuItem>
-                                <MenuItem value={"d"}>קשר קבוע עם מתנדב</MenuItem>
-                                <MenuItem value={"e"}> נמצא בטיפול</MenuItem>
-                                <MenuItem value={"f"}>סיום טיפול</MenuItem>
-                            </Select>
-                            <div style={{ lineHeight: 2.5 }}>צרף קבצים</div>
-                            <div style={{ lineHeight: 2.5 }}>היסטוריית צאט</div>
-                        </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button
-                            onClick={() => {
-                                setIsDialogOpen(false);
-                            }}
-                            color="primary"
-                        >
-                            מחק
-                        </Button>
-                        <Button onClick={handleClose} color="primary">
-                            אשר
-                        </Button>
-                    </DialogActions>
-                </Dialog>
-            </div>
-        </CardBody>
-    );
+        <Dialog
+          open={isDialogOpen}
+          onClose={handleClose}
+          onExit={handleClose}
+          style={{ direction: "rtl" }}
+          BackdropProps={{
+            classes: {
+              root: dialogClasses.root,
+            },
+          }}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">שם מלא: מאי סער</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              <div style={{ lineHeight: 2.5 }}>אשת קשר בעמותת עלם: עדי כהן</div>
+              <div>
+                תכנים חשודים: בגיל 13{" "}
+                <span className={dialogClasses.boldText}> האבא </span>
+                של <span className={dialogClasses.boldText}> האחים </span>
+                שלי <span className={dialogClasses.boldText}> הטריד </span>אותי
+                <span className={dialogClasses.boldText}> מינית </span>שכולם
+                ישנו הוא היה נוגע בי ומעביר את
+                <span className={dialogClasses.boldText}> איבר המין </span> שלו
+                על גופי, זה נמשך שנה. סיפרתי לאמא שלי בחצי שנה והיא לא האמינה עד
+                שאחותי אמרה לה שהוא{" "}
+                <span className={dialogClasses.boldText}> הטריד </span> גם אותה.
+              </div>
+              <div style={{ lineHeight: 2.5 }}>
+                עוקב אחרי: broken_tears273 ,kolhahazuimalay
+              </div>
+              סטטוס פרופיל:
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={status}
+                onChange={handleChange}
+              >
+                <MenuItem value={"a"}>הפרופיל אותר</MenuItem>
+                <MenuItem value={"b"}>נעשה ניסיון ליצירת קשר</MenuItem>
+                <MenuItem value={"c"}>נוצר קשר ראשוני</MenuItem>
+                <MenuItem value={"d"}>קשר קבוע עם מתנדב</MenuItem>
+                <MenuItem value={"e"}> נמצא בטיפול</MenuItem>
+                <MenuItem value={"f"}>סיום טיפול</MenuItem>
+              </Select>
+              <div style={{ lineHeight: 2.5 }}>צרף קבצים</div>
+              <div style={{ lineHeight: 2.5 }}>היסטוריית צאט</div>
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={() => {
+                setIsDialogOpen(false);
+              }}
+              color="primary"
+            >
+              מחק
+            </Button>
+            <Button onClick={handleClose} color="primary">
+              אשר
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    </CardBody>
+  );
 }
