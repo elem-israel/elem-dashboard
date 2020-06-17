@@ -18,7 +18,7 @@ export default function Avatars({ classes }) {
           <ChevronRightIcon />
         </IconButton>
         {[a1, a2, a3, a4, a5, a6].map((img) => (
-          <Avatar alt="Remy Sharp" src={img} className={classes.largeAvatar} />
+          <Avatar alt="Remy Sharp" src={img} className={`${classes.largeAvatar} gradient`} />
         ))}
       </div>
     </CardBody>
