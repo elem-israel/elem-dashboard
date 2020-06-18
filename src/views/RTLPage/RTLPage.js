@@ -4,13 +4,11 @@ import React, {useEffect, useState} from "react";
 import ChartistGraph from "react-chartist";
 // @material-ui/core
 import {makeStyles} from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
-import Accessibility from "@material-ui/icons/Accessibility";
 // core components
 import Button from "components/CustomButtons/Button.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -110,6 +108,8 @@ export default function RTLPage() {
                 ע"י מערכת ML ב24 שעות האחרונות
               </p>
             </CardHeader>
+            <Avatars classes={classes} />
+            <Avatars classes={classes} />
             <Avatars classes={classes} />
           </Card>
         </GridItem>
