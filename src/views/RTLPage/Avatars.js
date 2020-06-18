@@ -19,6 +19,9 @@ const styles = {
   root: {
     direction: "rtl",
   },
+  text: {
+    lineHeight: "2.5",
+  },
   boldText: {
     color: "red",
   },
@@ -105,21 +108,23 @@ export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">שם מלא: מאי סער</DialogTitle>
+          <DialogTitle id="alert-dialog-title">כרטיס אישי</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              <div style={{ lineHeight: 2.5 }}>אשת קשר בעמותת עלם: עדי כהן</div>
+              <div style={{ lineHeight: 2.5 }}>שם מלא: מאי סער</div>
+              <div style={{ lineHeight: 2.5 }}>
+                אחראי טיפול בעמותת עלם: עדי כהן
+              </div>
+              <div style={{ lineHeight: 2.5 }}>סיבת האיתור: עוקב אחרי</div>
               <div>
-                תכנים חשודים: בגיל 13{" "}
+                תוכן מאותר: בגיל 13{" "}
                 <span className={dialogClasses.boldText}> האבא </span>
                 של <span className={dialogClasses.boldText}> האחים </span>
                 שלי <span className={dialogClasses.boldText}> הטריד </span>אותי
-                <span className={dialogClasses.boldText}> מינית</span>, שכולם
-                ישנו הוא היה נוגע בי ומעביר את
-                <span className={dialogClasses.boldText}> איבר המין </span> שלו
-                על גופי, זה נמשך שנה. סיפרתי לאמא שלי בחצי שנה והיא לא האמינה עד
-                שאחותי אמרה לה שהוא{" "}
-                <span className={dialogClasses.boldText}> הטריד </span> גם אותה.
+                <span className={dialogClasses.boldText}> מינית</span>, זה נמשך
+                שנה. סיפרתי לאמא שלי בחצי שנה והיא לא האמינה עד שאחותי אמרה לה
+                שהוא <span className={dialogClasses.boldText}> הטריד </span> גם
+                אותה.
               </div>
               <div style={{ lineHeight: 2.5 }}>
                 עוקב אחרי: broken_tears273 ,kolhahazuimalay
@@ -149,10 +154,10 @@ export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
               }}
               color="primary"
             >
-              מחק
+              סגור
             </Button>
             <Button onClick={handleClose} color="primary">
-              אשר
+              שמור
             </Button>
           </DialogActions>
         </Dialog>
