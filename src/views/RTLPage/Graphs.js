@@ -15,6 +15,8 @@ import { completedTasksChart, dailySalesChart } from "../../variables/charts";
 import CardBody from "../../components/Card/CardBody";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
+import age from "../../assets/img/graphs/ageHebrew.png";
+import map from "../../assets/img/graphs/world_colors.png";
 
 export default function Graphs({ classes }) {
   return (
@@ -22,13 +24,7 @@ export default function Graphs({ classes }) {
       <GridItem xs={12} sm={12} md={6}>
         <Card chart>
           <CardHeader color="success">
-            <ChartistGraph
-              className="ct-chart"
-              data={dailySalesChart.data}
-              type="Line"
-              options={dailySalesChart.options}
-              listener={dailySalesChart.animation}
-            />
+            <img src={age} style={{ width: "100%" }} />
           </CardHeader>
           <CardBody>
             <h4 className={classes.cardTitle}>עוד גרף</h4>
@@ -48,14 +44,8 @@ export default function Graphs({ classes }) {
       </GridItem>
       <GridItem xs={12} sm={12} md={6}>
         <Card chart>
-          <CardHeader color="danger">
-            <ChartistGraph
-              className="ct-chart"
-              data={completedTasksChart.data}
-              type="Line"
-              options={completedTasksChart.options}
-              listener={completedTasksChart.animation}
-            />
+          <CardHeader>
+            <img src={map} style={{ width: "100%" }} />
           </CardHeader>
           <CardBody>
             <h4 className={classes.cardTitle}> סריקת פקופילים - אינסטגראם</h4>
