@@ -25,6 +25,7 @@ import {completedTasksChart, dailySalesChart} from "variables/charts.js";
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Avatars from "./Avatars";
 import Highlight from "./Highlight";
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles(styles);
 
@@ -55,7 +56,7 @@ function Incrementing({ classes }) {
         <Card>
           <CardHeader color="info" stats icon>
             <CardIcon color="info">
-              <Accessibility />
+              <SearchIcon />
             </CardIcon>
             <p className={classes.cardCategory}>פרופילים נסרקו</p>
             <h3 className={classes.cardTitle}>
