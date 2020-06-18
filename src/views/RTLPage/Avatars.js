@@ -61,7 +61,7 @@ export default function Avatars({ classes }) {
             <Avatar
               alt="Remy Sharp"
               src={img}
-              className={classes.largeAvatar}
+              className={`${classes.largeAvatar} gradient`}
             />
           </div>
         ))}
