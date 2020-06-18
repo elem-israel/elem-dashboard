@@ -24,7 +24,7 @@ import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Avatars from "./Avatars";
 import Highlight from "./Highlight";
 import SearchIcon from '@material-ui/icons/Search';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined';
 
 const useStyles = makeStyles(styles);
 
@@ -74,7 +74,7 @@ function Incrementing({ classes }) {
         <Card>
           <CardHeader color="danger" stats icon>
             <CardIcon color="danger">
-              <ErrorOutlineIcon/>
+              <ReportProblemOutlinedIcon/>
             </CardIcon>
             <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
             <h3 className={classes.cardTitle}>{inDanger}</h3>
