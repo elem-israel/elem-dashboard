@@ -30,9 +30,15 @@ const styles = {
   },
 };
 
+const rows = [
+  [11, 21, 12, 22, 13, 24],
+  [8, 14, 25, 15, 26, 16],
+  [17, 18, 19, 20, 10, 9],
+];
+
 const useStyles = makeStyles(styles);
 
-export default function Avatars({ classes, title }) {
+export default function Avatars({ classes, title, row = 0 }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const [status, setStatus] = useState("c");
@@ -61,12 +67,12 @@ export default function Avatars({ classes, title }) {
         <IconButton>
           <ChevronRightIcon />
         </IconButton>
-        {[a1, a2, a3, a4, a5, a6].map((img) => (
+        {rows[row].map((img) => (
           // eslint-disable-next-line react/jsx-key
           <div onClick={handleOpen}>
             <Avatar
               alt="Remy Sharp"
-              src={img}
+              src={`/avatars/${img}.jpg`}
               className={`${classes.largeAvatar} gradient`}
             />
           </div>

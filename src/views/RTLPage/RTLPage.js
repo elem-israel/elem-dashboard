@@ -41,6 +41,7 @@ export default function RTLPage() {
               </p>
             </CardHeader>
             <Avatars
+              row={0}
               classes={classes}
               title={
                 <Typography variant="h5" color={"error"}>
@@ -49,6 +50,7 @@ export default function RTLPage() {
               }
             />
             <Avatars
+              row={1}
               classes={classes}
               title={
                 <Typography variant="h5" style={{ color: "orange" }}>
@@ -57,6 +59,7 @@ export default function RTLPage() {
               }
             />
             <Avatars
+              row={2}
               classes={classes}
               title={
                 <Typography variant="h5" style={{ color: "#228B22" }}>
@@ -71,7 +74,6 @@ export default function RTLPage() {
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>פרופולים בטיפול</h4>
             </CardHeader>
-            <Avatars classes={classes} />
             <Avatars classes={classes} />
           </Card>
         </GridItem>
