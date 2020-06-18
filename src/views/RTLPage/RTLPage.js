@@ -1,9 +1,9 @@
 /*eslint-disable*/
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import Update from "@material-ui/icons/Update";
@@ -19,12 +19,13 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import SnackbarContent from "components/Snackbar/SnackbarContent.js";
-import {completedTasksChart, dailySalesChart} from "variables/charts.js";
+import { completedTasksChart, dailySalesChart } from "variables/charts.js";
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Avatars from "./Avatars";
 import Highlight from "./Highlight";
-import SearchIcon from '@material-ui/icons/Search';
-import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined';
+import SearchIcon from "@material-ui/icons/Search";
+import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -74,7 +75,7 @@ function Incrementing({ classes }) {
         <Card>
           <CardHeader color="danger" stats icon>
             <CardIcon color="danger">
-              <ReportProblemOutlinedIcon/>
+              <ReportProblemOutlinedIcon />
             </CardIcon>
             <p className={classes.cardCategory}>פרופילים בסיכון גבוה</p>
             <h3 className={classes.cardTitle}>{inDanger}</h3>
@@ -100,7 +101,7 @@ export default function RTLPage() {
         <Incrementing classes={classes} />
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
+        <GridItem xs={12}>
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>פרופילים חדשים שאותרו</h4>
@@ -108,54 +109,30 @@ export default function RTLPage() {
                 ע"י מערכת ML ב24 שעות האחרונות
               </p>
             </CardHeader>
-            <Avatars classes={classes} />
-            <Avatars classes={classes} />
-            <Avatars classes={classes} />
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>פרופילים לפי סיכון</h4>
-              <p className={classes.cardCategoryWhite}>
-                מצאת טעות? <a href={"#"}>דווח למנהל המערכת</a>.
-              </p>
-            </CardHeader>
-            <CardBody>
-              <SnackbarContent
-                message={
-                  <>
-                    אותרו 47 פרופילים עם סיכון <b>גבוה</b>{" "}
-                    <Button color={"primary"}>Go to profiles</Button>
-                  </>
-                }
-                close
-                rtlActive
-                color="danger"
-              />
-              <SnackbarContent
-                message={
-                  <>
-                    אותרו 13 פרופילים עם סיכון <b>בינוני</b>{" "}
-                    <Button color={"primary"}>Go to profiles</Button>
-                  </>
-                }
-                close
-                rtlActive
-                color="warning"
-              />
-              <SnackbarContent
-                message={
-                  <>
-                    אותרו 13 פרופילים עם סיכון <b>נמוך</b>{" "}
-                    <Button color={"primary"}>Go to profiles</Button>
-                  </>
-                }
-                close
-                rtlActive
-                color="success"
-              />
-            </CardBody>
+            <Avatars
+              classes={classes}
+              title={
+                <Typography variant="h5" color={"error"}>
+                  בסיכון גבוה
+                </Typography>
+              }
+            />
+            <Avatars
+              classes={classes}
+              title={
+                <Typography variant="h5" style={{ color: "orange" }}>
+                  בסיכון בינוני
+                </Typography>
+              }
+            />
+            <Avatars
+              classes={classes}
+              title={
+                <Typography variant="h5" style={{ color: "#228B22" }}>
+                  בסיכון נמוך
+                </Typography>
+              }
+            />
           </Card>
         </GridItem>
       </GridContainer>

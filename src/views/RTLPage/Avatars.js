@@ -19,6 +19,7 @@ import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Paper from "@material-ui/core/Paper";
 
 const styles = {
   root: {
@@ -31,7 +32,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Avatars({ classes }) {
+export default function Avatars({ classes, title }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const [status, setStatus] = useState("c");
@@ -51,8 +52,11 @@ export default function Avatars({ classes }) {
   const dialogClasses = useStyles();
   return (
     <CardBody>
+      <Paper elevation={3} style={{ padding: 2, marginBottom: 12 }}>
+        {title}
+      </Paper>
       <div style={{ display: "flex" }}>
-        <IconButton aria-label="delete">
+        <IconButton>
           <ChevronRightIcon />
         </IconButton>
         {[a1, a2, a3, a4, a5, a6].map((img) => (
