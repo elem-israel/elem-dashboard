@@ -1,11 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import a1 from "../../assets/img/avatars/1.jpg";
-import a2 from "../../assets/img/avatars/2.jpg";
-import a3 from "../../assets/img/avatars/3.jpg";
-import a4 from "../../assets/img/avatars/4.jpg";
-import a5 from "../../assets/img/avatars/5.jpg";
-import a6 from "../../assets/img/avatars/6.jpg";
 import CardBody from "../../components/Card/CardBody";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import IconButton from "@material-ui/core/IconButton";
@@ -15,10 +10,10 @@ import DialogTitle from "@material-ui/core/DialogTitle/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions/DialogActions";
-import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Paper from "@material-ui/core/Paper";
 
 const styles = {
   root: {
@@ -29,9 +24,33 @@ const styles = {
   },
 };
 
+const pics = [
+  28,
+  11,
+  29,
+  21,
+  12,
+  22,
+  13,
+  24,
+  8,
+  14,
+  25,
+  15,
+  26,
+  16,
+  17,
+  18,
+  19,
+  20,
+  10,
+  27,
+  30,
+];
+
 const useStyles = makeStyles(styles);
 
-export default function Avatars({ classes }) {
+export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const [status, setStatus] = useState("c");
@@ -51,16 +70,23 @@ export default function Avatars({ classes }) {
   const dialogClasses = useStyles();
   return (
     <CardBody>
+      {title && (
+        <Paper elevation={3} style={{ padding: 2, marginBottom: 12 }}>
+          {title}
+        </Paper>
+      )}
       <div style={{ display: "flex" }}>
-        <IconButton aria-label="delete">
-          <ChevronRightIcon />
-        </IconButton>
-        {[a1, a2, a3, a4, a5, a6].map((img) => (
+        {more && (
+          <IconButton>
+            <ChevronRightIcon />
+          </IconButton>
+        )}
+        {pics.slice(start, end).map((img) => (
           // eslint-disable-next-line react/jsx-key
           <div onClick={handleOpen}>
             <Avatar
               alt="Remy Sharp"
-              src={img}
+              src={`/avatars/${img}.jpg`}
               className={`${classes.largeAvatar} gradient`}
             />
           </div>
