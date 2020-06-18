@@ -19,9 +19,6 @@ const styles = {
   root: {
     direction: "rtl",
   },
-  text: {
-    lineHeight: "2.5",
-  },
   boldText: {
     color: "red",
   },
@@ -113,9 +110,10 @@ export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
             <DialogContentText id="alert-dialog-description">
               <div style={{ lineHeight: 2.5 }}>שם מלא: מאי סער</div>
               <div style={{ lineHeight: 2.5 }}>
-                אחראי טיפול בעמותת עלם: עדי כהן
+                אחראי טיפול: עדי כהן
               </div>
-              <div style={{ lineHeight: 2.5 }}>סיבת האיתור: עוקב אחרי</div>
+              <div style={{ lineHeight: 2.5 }}>סיבת האיתור: תוכן, עוקב אחרי, אחר
+              </div>
               <div>
                 תוכן מאותר: בגיל 13{" "}
                 <span className={dialogClasses.boldText}> האבא </span>
