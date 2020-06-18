@@ -1,11 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import a1 from "../../assets/img/avatars/8.jpg";
-import a2 from "../../assets/img/avatars/9.jpg";
-import a3 from "../../assets/img/avatars/10.jpg";
-import a4 from "../../assets/img/avatars/11.jpg";
-import a5 from "../../assets/img/avatars/12.jpg";
-import a6 from "../../assets/img/avatars/13.jpg";
 import CardBody from "../../components/Card/CardBody";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import IconButton from "@material-ui/core/IconButton";
@@ -15,7 +10,6 @@ import DialogTitle from "@material-ui/core/DialogTitle/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions/DialogActions";
-import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -30,15 +24,33 @@ const styles = {
   },
 };
 
-const rows = [
-  [11, 21, 12, 22, 13, 24],
-  [8, 14, 25, 15, 26, 16],
-  [17, 18, 19, 20, 10, 9],
+const pics = [
+  28,
+  11,
+  29,
+  21,
+  12,
+  22,
+  13,
+  24,
+  8,
+  14,
+  25,
+  15,
+  26,
+  16,
+  17,
+  18,
+  19,
+  20,
+  10,
+  27,
+  30,
 ];
 
 const useStyles = makeStyles(styles);
 
-export default function Avatars({ classes, title, row = 0 }) {
+export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const [status, setStatus] = useState("c");
@@ -64,10 +76,12 @@ export default function Avatars({ classes, title, row = 0 }) {
         </Paper>
       )}
       <div style={{ display: "flex" }}>
-        <IconButton>
-          <ChevronRightIcon />
-        </IconButton>
-        {rows[row].map((img) => (
+        {more && (
+          <IconButton>
+            <ChevronRightIcon />
+          </IconButton>
+        )}
+        {pics.slice(start, end).map((img) => (
           // eslint-disable-next-line react/jsx-key
           <div onClick={handleOpen}>
             <Avatar

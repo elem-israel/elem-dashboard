@@ -2,7 +2,7 @@
 import React from "react";
 // react plugin for creating charts
 // @material-ui/core
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 // core components
 import GridItem from "components/Grid/GridItem.js";
@@ -12,7 +12,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Avatars from "./Avatars";
 import Highlight from "./Highlight";
-import {Typography} from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import Incrementing from "./Incrementing";
 import Graphs from "./Graphs";
 
@@ -36,7 +36,9 @@ export default function RTLPage() {
               </p>
             </CardHeader>
             <Avatars
-              row={0}
+              more
+              start={0}
+              end={7}
               classes={classes}
               title={
                 <Typography variant="h5" color={"error"}>
@@ -45,7 +47,9 @@ export default function RTLPage() {
               }
             />
             <Avatars
-              row={1}
+              more
+              start={7}
+              end={14}
               classes={classes}
               title={
                 <Typography variant="h5" style={{ color: "orange" }}>
@@ -54,7 +58,9 @@ export default function RTLPage() {
               }
             />
             <Avatars
-              row={2}
+              more
+              start={14}
+              end={21}
               classes={classes}
               title={
                 <Typography variant="h5" style={{ color: "#228B22" }}>
@@ -69,7 +75,8 @@ export default function RTLPage() {
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>פרופולים בטיפול</h4>
             </CardHeader>
-            <Avatars classes={classes} />
+            <Avatars start={1} end={8} classes={classes} />
+            <Avatars more start={9} end={15} classes={classes} />
           </Card>
         </GridItem>
       </GridContainer>
