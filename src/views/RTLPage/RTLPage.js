@@ -70,9 +70,6 @@ export default function RTLPage() {
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>פרופולים בטיפול</h4>
-              <p className={classes.cardCategoryWhite}>
-                ע"י מערכת ML ב24 שעות האחרונות
-              </p>
             </CardHeader>
             <Avatars classes={classes} />
             <Avatars classes={classes} />
