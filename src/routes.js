@@ -20,10 +20,10 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import Notifications from "@material-ui/icons/Notifications";
-import TocIcon from '@material-ui/icons/Toc';
-import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import AssessmentIcon from '@material-ui/icons/Assessment';
+import TocIcon from "@material-ui/icons/Toc";
+import AddIcCallIcon from "@material-ui/icons/AddIcCall";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 // core components/views for Admin layout
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
@@ -44,17 +44,9 @@ const dashboardRoutes = [
     layout: "/rtl",
   },
   {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ניהול מתנדבים",
-    icon: Person,
-    component: UserProfile,
-    layout: "/admin",
-  },
-  {
     path: "/table",
     name: "Table List",
-    rtlName: "פרופילים חדשים בטיפול",
+    rtlName: "פרופילים חדשים",
     icon: "content_paste",
     component: TableList,
     layout: "/admin",
@@ -62,9 +54,17 @@ const dashboardRoutes = [
   {
     path: "/typography",
     name: "Typography",
-    rtlName: "בתהליך יצירת קשר",
+    rtlName: "פרופילים בטיפול",
     icon: LibraryBooks,
     component: Typography,
+    layout: "/admin",
+  },
+  {
+    path: "/user",
+    name: "User Profile",
+    rtlName: "ניהול מתנדבים",
+    icon: Person,
+    component: UserProfile,
     layout: "/admin",
   },
   {
@@ -98,7 +98,7 @@ const dashboardRoutes = [
     icon: AssessmentIcon,
     component: NotificationsPage,
     layout: "/admin",
-  }
+  },
 ];
 
 export default dashboardRoutes;
