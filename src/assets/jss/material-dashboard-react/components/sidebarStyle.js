@@ -98,7 +98,8 @@ const sidebarStyle = theme => ({
     display: "inline-block",
     maxHeight: "30px",
     marginLeft: "10px",
-    marginRight: "15px"
+    marginRight: "15px",
+    marginBottom: 90,
   },
   img: {
     width: "120px",
@@ -106,7 +107,6 @@ const sidebarStyle = theme => ({
     position: "absolute",
     verticalAlign: "middle",
     border: "0",
-    backgroundColor: "white"
   },
   background: {
     position: "absolute",

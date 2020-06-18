@@ -19,7 +19,7 @@ export default function Graphs({ classes }) {
             <img src={age} style={{ width: "100%" }} />
           </CardHeader>
           <CardBody>
-            <h4 className={classes.cardTitle}>עוד גרף</h4>
+            <h4 className={classes.cardTitle}>פילוח לפי גיל</h4>
             <p className={classes.cardCategory}>
               <span className={classes.successText}>
                 <ArrowUpward className={classes.upArrowCardCategory} /> 55%
