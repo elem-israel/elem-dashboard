@@ -23,14 +23,24 @@ import SnackbarContent from "../../components/Snackbar/SnackbarContent";
 import Button from "../../components/CustomButtons/Button";
 import Typography from "@material-ui/core/Typography";
 import Quote from "../../components/Typography/Quote";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  marked: { color: "#ff7d99", backgroundColor: "unset" },
+});
+
+function Mark({ children }) {
+  const classes = useStyles();
+  return <mark className={classes.marked}>{children}</mark>;
+}
 
 export default function Highlight({ classes }) {
   return (
     <>
-      <GridItem xs={12} sm={6} md={6}>
+      <GridItem xs={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>תכנים חשודים</h4>
+            <h4 className={classes.cardTitleWhite}>פוסטים שאותרו</h4>
             <p className={classes.cardCategoryWhite}>מאותר ע"י מערכת ה-NLP</p>
           </CardHeader>
           <CardBody>
@@ -39,35 +49,33 @@ export default function Highlight({ classes }) {
                 <Quote
                   text={
                     <React.Fragment>
-                      <mark>אח שלי הטריד אותי מינית מכיתה ה' עד ח'.</mark>{" "}
-                      בהתחלה זה היה חיכוכים קלים, אבל אז זה התחיל להיות יותר
-                      קיצוני. ניסיתי לספר לאמא כמה פעמים אבל היא הדחיקה. השנה
-                      החלטתי שנמאס לי, עשיתי איתה שיחה אמיתית והסברתי לה את
+                      אח שלי <Mark>הטריד</Mark> אותי <Mark>מינית</Mark> מכיתה ה'
+                      עד ח'. בהתחלה זה היה חיכוכים קלים, אבל אז זה התחיל להיות
+                      יותר קיצוני. ניסיתי לספר לאמא כמה פעמים אבל היא הדחיקה.
+                      השנה החלטתי שנמאס לי, עשיתי איתה שיחה אמיתית והסברתי לה את
                       המצב, היא ענתה לי שהיא לא יודעת למי להאמין. בזמן{" "}
-                      <mark>ש אני מתפרקת מולה</mark> היא אפילו לא חיבקה אותי.
+                      שאני <Mark>מתפרקת</Mark> מולה היא אפילו לא חיבקה אותי.
                     </React.Fragment>
                   }
                   author={
                     <React.Fragment>
-                      bubbleGum32{" "}
-                      <a href={"#"}>(לחץ כדי לראות פוסט מקורי)</a>
+                      bubbleGum32 <a href={"#"}>(לחץ כדי לראות פוסט מקורי)</a>
                     </React.Fragment>
                   }
                 />
               }
               close
               rtlActive
-              color="info"
             />
             <SnackbarContent
               message={
                 <Quote
                   text={
                     <React.Fragment>
-                      <mark>אני עברתי אונס שהייתי קטן</mark>
-                      ביחד עם אחי <mark>ממישהו במשפחה</mark>
-                      ואף אחד לא יודע על כך. הראש שלי אומר לי שזה לא לגמרי לא ב
-                      <mark>אשמתי</mark>, מה אני אומר למח כדי להוציא את המחשבה
+                      אני עברתי <Mark>אונס</Mark>  שהייתי קטן
+                      ביחד עם אחי ממישהו <Mark>במשפחה</Mark>
+                      ואף אחד לא יודע על כך. הראש שלי אומר לי שזה לא לגמרי לא{" "}
+                      <Mark>באשמתי</Mark> , מה אני אומר למח כדי להוציא את המחשבה
                       הזאת??
                     </React.Fragment>
                   }
@@ -81,7 +89,6 @@ export default function Highlight({ classes }) {
               }
               close
               rtlActive
-              color="info"
             />
           </CardBody>
         </Card>
