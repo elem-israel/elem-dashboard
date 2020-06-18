@@ -52,9 +52,11 @@ export default function Avatars({ classes, title }) {
   const dialogClasses = useStyles();
   return (
     <CardBody>
-      <Paper elevation={3} style={{ padding: 2, marginBottom: 12 }}>
-        {title}
-      </Paper>
+      {title && (
+        <Paper elevation={3} style={{ padding: 2, marginBottom: 12 }}>
+          {title}
+        </Paper>
+      )}
       <div style={{ display: "flex" }}>
         <IconButton>
           <ChevronRightIcon />

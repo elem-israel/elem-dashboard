@@ -32,7 +32,7 @@ export default function RTLPage() {
         <Incrementing classes={classes} />
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12}>
+        <GridItem xs={12} md={6}>
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>פרופילים חדשים שאותרו</h4>
@@ -64,6 +64,18 @@ export default function RTLPage() {
                 </Typography>
               }
             />
+          </Card>
+        </GridItem>
+        <GridItem xs={12} md={6}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>פרופולים בטיפול</h4>
+              <p className={classes.cardCategoryWhite}>
+                ע"י מערכת ML ב24 שעות האחרונות
+              </p>
+            </CardHeader>
+            <Avatars classes={classes} />
+            <Avatars classes={classes} />
           </Card>
         </GridItem>
       </GridContainer>
