@@ -109,10 +109,9 @@ export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               <div style={{ lineHeight: 2.5 }}>שם מלא: מאי סער</div>
+              <div style={{ lineHeight: 2.5 }}>אחראי טיפול: עדי כהן</div>
               <div style={{ lineHeight: 2.5 }}>
-                אחראי טיפול: עדי כהן
-              </div>
-              <div style={{ lineHeight: 2.5 }}>סיבת האיתור: תוכן, עוקב אחרי, אחר
+                סיבת האיתור: תוכן, עוקב אחרי, אחר.
               </div>
               <div>
                 תוכן מאותר: בגיל 13{" "}
