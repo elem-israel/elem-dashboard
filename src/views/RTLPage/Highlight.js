@@ -1,29 +1,11 @@
 import * as React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import a1 from "../../assets/img/avatars/1.jpg";
-import a2 from "../../assets/img/avatars/2.jpg";
-import a3 from "../../assets/img/avatars/3.jpg";
-import a4 from "../../assets/img/avatars/4.jpg";
-import a5 from "../../assets/img/avatars/5.jpg";
-import a6 from "../../assets/img/avatars/5.jpg";
 import CardBody from "../../components/Card/CardBody";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import IconButton from "@material-ui/core/IconButton";
-import { useEffect, useState } from "react";
 import GridItem from "../../components/Grid/GridItem";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
-import CardIcon from "../../components/Card/CardIcon";
-import Accessibility from "@material-ui/icons/Accessibility";
-import CardFooter from "../../components/Card/CardFooter";
-import Update from "@material-ui/icons/Update";
-import Icon from "@material-ui/core/Icon";
-import LocalOffer from "@material-ui/icons/LocalOffer";
 import SnackbarContent from "../../components/Snackbar/SnackbarContent";
-import Button from "../../components/CustomButtons/Button";
-import Typography from "@material-ui/core/Typography";
 import Quote from "../../components/Typography/Quote";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   marked: { color: "#ff7d99", backgroundColor: "unset" },
