@@ -20,6 +20,7 @@ import Avatars from "./Avatars";
 import Highlight from "./Highlight";
 import { Typography } from "@material-ui/core";
 import Incrementing from "./Incrementing";
+import Graphs from "./Graphs";
 
 const useStyles = makeStyles(styles);
 
@@ -81,56 +82,7 @@ export default function RTLPage() {
       <GridContainer>
         <Highlight classes={classes} />
       </GridContainer>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card chart>
-            <CardHeader color="success">
-              <ChartistGraph
-                className="ct-chart"
-                data={dailySalesChart.data}
-                type="Line"
-                options={dailySalesChart.options}
-                listener={dailySalesChart.animation}
-              />
-            </CardHeader>
-            <CardBody>
-              <h4 className={classes.cardTitle}>עוד גרף</h4>
-              <p className={classes.cardCategory}>
-                <span className={classes.successText}>
-                  <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                </span>{" "}
-                עלייה דרמטית
-              </p>
-            </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> שמציג נתונים מעניינים
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card chart>
-            <CardHeader color="danger">
-              <ChartistGraph
-                className="ct-chart"
-                data={completedTasksChart.data}
-                type="Line"
-                options={completedTasksChart.options}
-                listener={completedTasksChart.animation}
-              />
-            </CardHeader>
-            <CardBody>
-              <h4 className={classes.cardTitle}> סריקת פקופילים - אינסטגראם</h4>
-            </CardBody>
-            <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> עודכן לאחרונה: לפני 5 דקות
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-      </GridContainer>
+      <Graphs classes={classes} />
     </div>
   );
 }
