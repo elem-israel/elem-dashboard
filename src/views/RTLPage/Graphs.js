@@ -40,7 +40,7 @@ export default function Graphs({ classes }) {
             <img src={map} style={{ width: "100%" }} />
           </CardHeader>
           <CardBody>
-            <h4 className={classes.cardTitle}> סריקת פקופילים - אינסטגראם</h4>
+            <h4 className={classes.cardTitle}> סריקת פרופילים - אינסטגרם</h4>
           </CardBody>
           <CardFooter chart>
             <div className={classes.stats}>
