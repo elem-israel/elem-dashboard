@@ -21,9 +21,8 @@ export default function Highlight({ classes }) {
     <>
       <GridItem xs={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="info">
             <h4 className={classes.cardTitleWhite}>פוסטים שאותרו</h4>
-            <p className={classes.cardCategoryWhite}>מאותר ע"י מערכת ה-NLP</p>
           </CardHeader>
           <CardBody>
             <SnackbarContent
