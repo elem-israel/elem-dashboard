@@ -80,6 +80,7 @@ export default function Sidebar(props) {
       })}
     </List>
   );
+  
   var brand = (
     <div className={classes.logo}>
       <a
