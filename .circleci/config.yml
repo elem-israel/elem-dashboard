@@ -1,0 +1,19 @@
+orbs:
+  react: 'thefrontside/react@dev:alpha'
+   aws-s3: circleci/aws-s3@1.0.16
+version: 2
+workflows:
+  push:
+    jobs:
+      - react/install
+      - react/build:
+          requires:
+            - react/install
+      - aws-s3/sync:
+          requires:
+            react/build
+          aws-access-key-id: AWS_ACCESS_KEY
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: dist
+          to: 's3://elem.dashboard/'
