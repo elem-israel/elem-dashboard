@@ -80,6 +80,7 @@ export default function Sidebar(props) {
       })}
     </List>
   );
+  
   var brand = (
     <div className={classes.logo}>
       <a
@@ -90,7 +91,8 @@ export default function Sidebar(props) {
         target="_blank"
       >
         <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
+          <img  src={logo} alt="logo" className={classes.img} 
+                style={{paddingLeft: '10px',margin: 'auto',backgroundColor: 'white', overflow: 'hidden', borderRadius: '45px'}}/>
         </div>
         {logoText}
       </a>

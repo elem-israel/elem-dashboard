@@ -29,7 +29,7 @@ export default function RTLPage() {
       <GridContainer>
         <GridItem xs={12} md={6}>
           <Card>
-            <CardHeader color="primary">
+            <CardHeader color="info">
               <h4 className={classes.cardTitleWhite}>פרופילים חדשים שאותרו</h4>
               <p className={classes.cardCategoryWhite}>
                 ע"י מערכת ML ב24 שעות האחרונות
@@ -72,11 +72,11 @@ export default function RTLPage() {
         </GridItem>
         <GridItem xs={12} md={6}>
           <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>פרופולים בטיפול</h4>
+            <CardHeader color="info">
+              <h4 className={classes.cardTitleWhite}>פרופילים בטיפול</h4>
             </CardHeader>
-            <Avatars start={1} end={9} classes={classes} />
-            <Avatars more start={10} end={16} classes={classes} />
+            <Avatars start={12} end={18} classes={classes} />
+            <Avatars more start={4} end={10} classes={classes} />
           </Card>
         </GridItem>
       </GridContainer>

@@ -68,6 +68,14 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
+    path: "/manage",
+    name: "User Profile",
+    rtlName: "ניהול פניות בצ'אטבוט",
+    icon: ContactMailIcon,
+    component: UserProfile,
+    layout: "/admin",
+  },
+  {
     path: "/icons",
     name: "Icons",
     rtlName: "יועצים זמינים לשיחה",

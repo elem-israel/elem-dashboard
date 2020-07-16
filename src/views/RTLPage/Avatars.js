@@ -75,7 +75,7 @@ export default function Avatars({ classes, title, more, start = 0, end = 6 }) {
           {title}
         </Paper>
       )}
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", overflow: "auto" }}>
         {more && (
           <IconButton>
             <ChevronRightIcon />

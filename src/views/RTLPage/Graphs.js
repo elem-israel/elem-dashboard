@@ -8,7 +8,7 @@ import CardBody from "../../components/Card/CardBody";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
 import age from "../../assets/img/graphs/ageHebrew.png";
-import map from "../../assets/img/graphs/world_colors.png";
+import map from "../../assets/img/Israel_map.png";
 
 export default function Graphs({ classes }) {
   return (
