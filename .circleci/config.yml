@@ -1,5 +1,5 @@
 orbs:
-  react: 'thefrontside/react@dev:alpha'
+  react: 'thefrontside/react@0.2.0'
   aws-s3: circleci/aws-s3@1.0.16
 version: 2
 jobs:
@@ -7,10 +7,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.2-jessie-node
     steps:
-      - react/install
-      - react/build:
-          requires:
-            - react/install
+      - run: npm install
+      - run: npm build
       - aws-s3/sync:
           requires:
             react/build
