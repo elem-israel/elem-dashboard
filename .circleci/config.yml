@@ -2,9 +2,11 @@ orbs:
   react: 'thefrontside/react@dev:alpha'
   aws-s3: circleci/aws-s3@1.0.16
 version: 2
-workflows:
-  push:
-    jobs:
+jobs:
+  stage:  
+    docker:
+      - image: circleci/ruby:2.4.2-jessie-node
+    steps:
       - react/install
       - react/build:
           requires:
@@ -12,8 +14,5 @@ workflows:
       - aws-s3/sync:
           requires:
             react/build
-          aws-access-key-id: AWS_ACCESS_KEY
-          aws-region: AWS_REGION
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: dist
           to: 's3://elem.dashboard/'
