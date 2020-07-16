@@ -10,7 +10,5 @@ jobs:
       - run: npm install
       - run: npm build
       - aws-s3/sync:
-          requires:
-            react/build
           from: dist
           to: 's3://elem.dashboard/'
