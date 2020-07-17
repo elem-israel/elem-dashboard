@@ -24,7 +24,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 
-import * as style from "assets/css/material-dashboard-react.css";
+import "assets/css/material-dashboard-react.css";
 
 const hist = createBrowserHistory();
 
