@@ -16,7 +16,7 @@ export default function Graphs({ classes }) {
       <GridItem xs={12} sm={12} md={6}>
         <Card chart>
           <CardHeader color="success">
-            <img src={age} style={{ width: "100%" }} />
+            <img src={age} style={{ width: "100%" }} alt="" />
           </CardHeader>
           <CardBody>
             <h4 className={classes.cardTitle}>פילוח לפי גיל</h4>
@@ -37,7 +37,7 @@ export default function Graphs({ classes }) {
       <GridItem xs={12} sm={12} md={6}>
         <Card chart>
           <CardHeader>
-            <img src={map} style={{ width: "100%" }} />
+            <img src={map} style={{ width: "100%" }}  alt="" />
           </CardHeader>
           <CardBody>
             <h4 className={classes.cardTitle}> סריקת פרופילים - אינסטגרם</h4>

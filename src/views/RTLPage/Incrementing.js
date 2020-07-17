@@ -8,7 +8,6 @@ import GridItem from "../../components/Grid/GridItem";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
 import CardIcon from "../../components/Card/CardIcon";
-import LocalOffer from "@material-ui/icons/LocalOffer";
 
 export default function Incrementing({ classes }) {
   const [scanned, setScanned] = useState(12155);
@@ -37,7 +36,7 @@ export default function Incrementing({ classes }) {
     tickScanned();
     tickDanger();
     tickMedium();
-  }, []);
+  }, [tickScanned, tickDanger, tickMedium]);
 
   return (
     <>

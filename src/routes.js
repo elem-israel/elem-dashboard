@@ -19,7 +19,6 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import Notifications from "@material-ui/icons/Notifications";
 import TocIcon from "@material-ui/icons/Toc";
 import AddIcCallIcon from "@material-ui/icons/AddIcCall";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
