@@ -7,7 +7,7 @@ jobs:
       - image: circleci/node:12
     steps:
       - run: npm install
-      - run: npm build
+      - run: npm run build
       - aws-s3/sync:
           from: dist
           to: 's3://elem.dashboard/'
