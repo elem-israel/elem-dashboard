@@ -36,7 +36,7 @@ export default function Incrementing({ classes }) {
     tickScanned();
     tickDanger();
     tickMedium();
-  }, [tickScanned, tickDanger, tickMedium]);
+  }, []);
 
   return (
     <>
