@@ -40,7 +40,7 @@ export default function Highlight({ classes }) {
                   }
                   author={
                     <React.Fragment>
-                      bubbleGum32 <a href={"#"}>(לחץ כדי לראות פוסט מקורי)</a>
+                      bubbleGum32 <a href={"/#"}>(לחץ כדי לראות פוסט מקורי)</a>
                     </React.Fragment>
                   }
                 />
@@ -63,7 +63,7 @@ export default function Highlight({ classes }) {
                   author={
                     <React.Fragment>
                       anonymous26775{" "}
-                      <a href={"#"}>(לחץ כדי לראות פוסט מקורי)</a>
+                      <a href={"/#"}>(לחץ כדי לראות פוסט מקורי)</a>
                     </React.Fragment>
                   }
                 />

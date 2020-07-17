@@ -14,25 +14,25 @@ export default function Incrementing({ classes }) {
   const [inDanger, setInDanger] = useState(425);
   const [medium, setMedium] = useState(1205);
 
-  function tickScanned() {
-    const rand = Math.random() + 200;
-    setScanned((scanned) => scanned + 1);
-    setTimeout(tickScanned, rand);
-  }
-
-  function tickDanger() {
-    const rand = Math.random() * 3000;
-    setInDanger((i) => i + 1);
-    setTimeout(tickDanger, rand);
-  }
-
-  function tickMedium() {
-    const rand = Math.random() * 3000;
-    setMedium((i) => i + 1);
-    setTimeout(tickMedium, rand);
-  }
-
   useEffect(() => {
+    function tickScanned() {
+      const rand = Math.random() + 200;
+      setScanned((scanned) => scanned + 1);
+      setTimeout(tickScanned, rand);
+    }
+  
+    function tickDanger() {
+      const rand = Math.random() * 3000;
+      setInDanger((i) => i + 1);
+      setTimeout(tickDanger, rand);
+    }
+  
+    function tickMedium() {
+      const rand = Math.random() * 3000;
+      setMedium((i) => i + 1);
+      setTimeout(tickMedium, rand);
+    }
+    
     tickScanned();
     tickDanger();
     tickMedium();
